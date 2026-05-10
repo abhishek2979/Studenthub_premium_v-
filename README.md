@@ -1,64 +1,76 @@
 # StudentHub
 
-A school management system I built for teachers and students. Teachers can manage students, attendance, results, assignments, notes and quizzes. Students get their own dashboard to view everything.
+A web app I built for managing student-teacher stuff like attendance, results, assignments etc. Made this as a personal project to learn full stack development.
 
-Also added a premium system where teachers can pay to unlock video lecture uploads and live class scheduling.
+## Why I built this
 
-## Tech Stack
+In our college (NIT Agartala) teachers still manage attendance and results in excel sheets and whatsapp groups. Thought it would be a good idea to build something proper for it. Also wanted to practice React and Node.js so this seemed like a good project.
 
-- **Frontend** - React + Vite
-- **Backend** - Node.js, Express
-- **Database** - MongoDB Atlas
-- **Auth** - JWT + Google OAuth (teachers), username/password (students)
-- **File storage** - Cloudinary
+## What it does
 
-## Running locally
+**For teachers**
+- Add students and manage their profiles
+- Mark attendance day by day
+- Upload results / marks
+- Share notes as PDFs
+- Create assignments and check submissions
+- Make quizzes with auto grading
+- Upload video lectures (premium)
+- Schedule live classes with google meet or zoom link (premium)
 
-```bash
-# install dependencies
-npm run install:all
-
-# start backend (port 5000)
-npm run backend
-
-# start frontend (port 5173)
-npm run frontend
-```
-
-Make sure you have a `.env` file in the `backend/` folder. Copy `.env.example` and fill in your values.
-
-## Features
-
-**Teacher dashboard**
-- Add/manage students
-- Mark attendance
-- Upload results
-- Create assignments with PDF
-- Notes for students
-- Quiz builder
-- Video lectures (Premium 1)
-- Live class scheduling (Premium 2)
-
-**Student dashboard**
-- View attendance
-- Check results and performance charts
-- Download assignments
+**For students**
+- Check their attendance
+- See results and a performance graph
+- Download notes and assignments
 - Submit assignments
-- Take quizzes
-- Watch video lectures
+- Give quizzes
+- Watch recorded lectures
 - Join live classes
 
-## Premium
+## Tech stack
 
-Two plans available:
-- Premium 1 (₹499/mo) - upload video lectures by subject and day
-- Premium 2 (₹999/mo) - everything in P1 + schedule live classes with meeting links
+- React + Vite (frontend)
+- Node.js + Express (backend)
+- MongoDB Atlas (database)
+- Cloudinary (file/video storage)
+- JWT for auth
+- Google OAuth for teacher login
 
-Payment is currently mock (auto-confirms). Razorpay integration is ready to plug in, just needs API keys.
+Frontend runs on localhost:5173 and backend on localhost:5000
+
+## Environment variables
+
+Copy `backend/.env.example` to `backend/.env` and fill in:
+- MongoDB connection string
+- JWT secret
+- Google OAuth credentials (from Google Cloud Console)
+- Cloudinary credentials (from cloudinary.com)
+
+## Premium feature
+
+Added a subscription system where teachers can pay to unlock extra features. Two plans:
+- Premium 1 (₹499/month) - upload video lectures
+- Premium 2 (₹999/month) - video lectures + live class scheduling
+
+Payment is mock right now (just clicks through). Will integrate Razorpay properly later.
 
 ## Deployment
 
-- Frontend on Vercel
-- Backend on Render
-- DB on MongoDB Atlas
+- Frontend → Vercel
+- Backend → Render
+- DB → MongoDB Atlas
 
+## What I learned
+
+- How JWT auth works end to end
+- Handling file uploads with multer and cloudinary
+- React context for state management
+- Building REST APIs with Express
+- MongoDB aggregation for attendance/result stats
+
+## Future improvements if I continue this
+
+- Mobile app version
+- Real payment integration
+- Push notifications when teacher uploads something
+- Better video player with progress tracking
