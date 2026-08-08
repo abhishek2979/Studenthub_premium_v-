@@ -43,7 +43,7 @@ const userSchema = new mongoose.Schema({
   premiumActive:  { type: Boolean, default: false },    
 }, { timestamps: true });
 
-// hash password before saving
+// hash password before savingb 
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password') || !this.password) return next();
   this.password = await bcrypt.hash(this.password, 12);

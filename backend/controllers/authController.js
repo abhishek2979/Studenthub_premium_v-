@@ -2,7 +2,7 @@ const asyncHandler      = require('express-async-handler');
 const { OAuth2Client }  = require('google-auth-library');
 const User              = require('../models/User');
 const { generateToken } = require('../utils/generateToken');
-
+ 
 const googleAuth = asyncHandler(async (req, res) => {
   const { credential } = req.body;
 
