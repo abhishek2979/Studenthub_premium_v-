@@ -7,6 +7,7 @@ const { notFound, errorHandler } = require('./middleware/errorHandler');
 connectDB();
 
 const app = express();
+app.set('trust proxy', 1);
 
 
 const ALLOWED_ORIGINS = [
